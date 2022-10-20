@@ -304,11 +304,10 @@ a separator ' -> '."
   "Insert backlink to LINK with DESC.
 Where the backlink is placed is determined by the variable `org-super-links-backlink-into-drawer'."
   (let* ((org-log-into-drawer (org-super-links-backlink-into-drawer))
-	 (description (org-super-links-default-description-formatter link desc))
 	 (beg (org-log-beginning t)))
     (goto-char beg)
     (insert (org-super-links-backlink-prefix))
-    (insert (org-link-make-string link description))
+    (insert (org-link-make-string link desc))
     (insert (org-super-links-backlink-postfix))
     (org-indent-region beg (point))))
 
